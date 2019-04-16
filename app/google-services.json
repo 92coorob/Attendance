@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "865127262801",
+    "firebase_url": "https://facialrecognition-b1916.firebaseio.com",
+    "project_id": "facialrecognition-b1916",
+    "storage_bucket": "facialrecognition-b1916.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865127262801:android:22dc89fdc07de644",
+        "android_client_info": {
+          "package_name": "com.example.attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865127262801-e9rq791jeciktctqrnu9pem23uf0dosp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtv8p7oZL9wrl-V5laUX8SlbfcC501yE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865127262801-e9rq791jeciktctqrnu9pem23uf0dosp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865127262801:android:205d398fde12a513",
+        "android_client_info": {
+          "package_name": "edmt.dev.androidgridlayout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865127262801-e9rq791jeciktctqrnu9pem23uf0dosp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtv8p7oZL9wrl-V5laUX8SlbfcC501yE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865127262801-e9rq791jeciktctqrnu9pem23uf0dosp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
