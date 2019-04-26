@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".attendance"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".admin_page"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".attendance" />
+        <activity android:name=".login_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

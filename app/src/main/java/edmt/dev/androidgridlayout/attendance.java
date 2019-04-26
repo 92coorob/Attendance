@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.content.SharedPreferences;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,6 +44,9 @@ public class attendance extends AppCompatActivity {
     String hour;
     String minutes;
     private TextView displayText;
+    SharedPreferences username_pref;
+    String username;
+
 
 
     @Override
@@ -51,9 +54,11 @@ public class attendance extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("users").child("Robert");
+        username_pref = getSharedPreferences("students", MODE_PRIVATE);
+        username = username_pref.getString("username", "");
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("users").child(username);
 
         displayText = findViewById(R.id.displayAttendance);
         week1 = findViewById(R.id.button_week1);
@@ -91,12 +96,15 @@ public class attendance extends AppCompatActivity {
                 int intmonth = Integer.parseInt(month);
                 int intday = Integer.parseInt(day);
 
-               if(intmonth == 4 && intday == 17 && inthour >=17 && inthour <18){
+
+
+               if(intmonth == 4 && intday == 24 && inthour >=17 && inthour <20){
 
                    week5.setBackgroundColor(getResources().getColor(R.color.green));
 
                }
-                displayText.setText("Robert Last seen at: "+checkvalue);
+                displayText.setText(username + " Last seen at: "+checkvalue);
+
 
 
 
