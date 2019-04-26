@@ -150,4 +150,8 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         return secretKeySpec;
     }
 
+    @Override
+    public void onBackPressed() {
+        this.moveTaskToBack(true);
+    }
 }

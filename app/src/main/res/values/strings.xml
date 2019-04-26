@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidGridLayout</string>
+
+    <string-array name="roles">
+        <item>student</item>
+        <item>admin</item>
+    </string-array>
+
 </resources>
