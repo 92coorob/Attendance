@@ -27,7 +27,6 @@ import javax.crypto.spec.SecretKeySpec;
 public class login_page extends AppCompatActivity implements View.OnClickListener{
 
     private Button login;
-    private TextView forgot_pw;
     private EditText edtUser, edtPw;
 
     FirebaseDatabase database;
@@ -37,6 +36,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
     String AES = "AES";
     String encrypt_key = "testencryptionkey";
+    String dec_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,6 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         login = (Button) findViewById(R.id.login_btn);
         login.setOnClickListener(this);
 
-        forgot_pw = (TextView) findViewById(R.id.forgot_pw);
-        forgot_pw.setOnClickListener(this);
 
         edtUser = (EditText) findViewById(R.id.username);
         edtPw = (EditText) findViewById(R.id.password);
@@ -79,8 +77,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                 signIn(edtUser.getText().toString(),
                         edtPw.getText().toString());
                 break;
-            case R.id.forgot_pw:
-                break;
+
         }
     }
 
@@ -92,7 +89,12 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                     if(dataSnapshot.child(username).exists()){
                         String check_pass=  dataSnapshot.child(username).child("password").getValue().toString();
                         try {
-                            if(password.equals(check_pass)){
+                            dec_password = decrypt(check_pass);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            if(password.equals(dec_password)){
                                 Toast.makeText(login_page.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
                                 SharedPreferences.Editor edit_name = username_pref.edit();
                                     edit_name.putString("username", username);
